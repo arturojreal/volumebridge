@@ -96,7 +96,7 @@ Each brief is a short, sourced answer to one item in the project research queue.
 
 ## 8. Enhanced Input with a PlayStation controller and Chaos physics
 
-**Enhanced Input:** the default input system in UE5. Core pieces: Input Mapping Context (IMC), Input Actions (IA), the Enhanced Input Local Player Subsystem, bound in the Player Controller or Pawn. Community guides cover it for 5.5 and general 5.x; gamepad bindings are set in the IMC (a DualSense enumerates as a standard gamepad; confirm button mappings on your controller).
+**Enhanced Input:** the default input system in UE5. Core pieces: Input Mapping Context (IMC), Input Actions (IA), the Enhanced Input Local Player Subsystem, bound in the Player Controller or Pawn. Community guides cover it for 5.5 and general 5.x; gamepad bindings are set in the IMC (most modern gamepads enumerate as a standard gamepad; confirm button mappings on your controller).
 
 **Chaos physics:** UE5's built-in physics engine (replaced PhysX), with rigid-body dynamics, destruction, and ragdoll. Push objects by enabling Simulate Physics on the target and applying force or impulse (`Add Impulse`, `Add Force`) from an input event. **Known gotcha:** a physics body that goes to sleep can stop responding; wake it or disable sleep if pushable objects become unresponsive after settling.
 
