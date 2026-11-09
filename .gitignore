@@ -1,0 +1,20 @@
+# Stage-specific overlay (never published)
+private/
+*.key
+*.local
+.DS_Store
+
+# Unreal build artifacts
+unreal/**/Binaries/
+unreal/**/Intermediate/
+unreal/**/Saved/
+unreal/**/DerivedDataCache/
+
+# TouchDesigner autosaves and backups
+td/**/Backup/
+td/**/*.[0-9]*.toe
+td/**/CrashAutoSave*.toe
+
+# Licensed third-party assets, never published
+unreal/**/Content/KitBash3D/
+unreal/**/Content/Kitbash3D/
