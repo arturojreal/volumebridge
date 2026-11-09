@@ -67,10 +67,11 @@ Tip: press Tab or double-click empty network space to open the OP Create dialog.
 Make a circle scale with the level:
 1. Add a **Circle TOP**, rename it `circle`.
 2. Add a **Null CHOP** after `level` (or `levelNorm`), rename it `nullLevel`. A Null is the stable reference point you reference from expressions, so downstream nodes do not break when you rewire.
-3. On the `circle` TOP, open the Size parameter and bind it to the level with an expression, for example:
+3. On the `circle` TOP, go to the **Circle** parameter page. The Circle TOP has no Size parameter; its size is **Radius**. Set **Radius Unit** to **Fraction (0-1)** so the radius is a fraction of the image (otherwise it is in pixels and 0.2 is invisible). Then set **Radius X** and **Radius Y** to react to the level: switch each field from Constant to Expression mode (the small mode button at the left edge of the parameter row, the field turns blue) and enter the same expression in both:
    ```
    0.2 + op('nullLevel')[0]
    ```
+   Keep both equal so the circle stays round. (Beginner-friendly alternative: add a Math CHOP after `nullLevel`, map it to 0 to 1 with its From/To Range, and export that channel onto the Radius parameter.)
 4. Play sound. The circle grows and shrinks with loudness.
 
 ## Step 7 - Save, log, commit (10 min)
