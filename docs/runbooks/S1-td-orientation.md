@@ -53,14 +53,19 @@ Tip: press Tab or double-click empty network space to open the OP Create dialog.
 1. Add an **Audio Spectrum CHOP**. Rename it `spectrum`.
 2. Wire `audioIn` into `spectrum`.
 3. The `spectrum` viewer shows magnitude across frequency bins, low frequencies on the left. It should react to music, with bass pushing the left side and highs the right.
-4. Optional display as an image: add a **CHOP to TOP**, wire `spectrum` into it, rename it `spectrumTop`. This turns the spectrum into a texture you can show on a panel later. Remember the 1280x1280 cap when you set its resolution.
+4. Optional display as an image: add a **CHOP to TOP** and rename it `spectrumTop`. It has no CHOP input to wire into, because TOP inputs only accept TOPs. Instead, drag the `spectrum` node onto its **CHOP** parameter (or type `spectrum` there); a dashed reference line appears. The result is one pixel tall per channel, so add a **Fit TOP** after it (for example 512x256) to see it clearly. Its width is the number of spectrum bins; keep it under the Non-Commercial 1280x1280 cap.
 
 ## Step 5 - A single moving level (15 min)
 
 1. Add an **Analyze CHOP**. Rename it `level`.
 2. Wire `audioIn` into `level`.
 3. Set the Analyze **Function** to **RMS Power**. The output is now one channel whose value rises and falls with loudness. This is the "level moving" proof for the done checklist and the seed of the envelope follower in S2.
-4. Optional: add a **Math CHOP** after `level` to scale it to a comfortable 0 to 1 range, rename it `levelNorm`. Keep the raw `level` too.
+4. Optional: add a **Math CHOP** after `level`, rename it `levelNorm`, and scale it to 0 to 1. Keep the raw `level` too.
+    - Both ranges default to 0 to 1, so the Math CHOP changes nothing until you set the input side.
+    - Play audio at your normal volume and note the rough peak of `level` (RMS values are small, often around 0.1 to 0.3).
+    - On the **Range** page, set **From Range** to `0` and that peak (for example `0` and `0.25`). Leave **To Range** at `0` and `1`.
+    - Peaks can still overshoot 1. For a hard ceiling, add a **Limit CHOP** after it with **Type** set to **Clamp**, **Minimum** 0, **Maximum** 1.
+    - Re-check the peak when the source or gain changes. S2 replaces this hand-set number with smoothing and parameters.
 
 ## Step 6 - Stretch (optional, if time) 
 
@@ -103,5 +108,7 @@ Note: `.toe` files are binary, so git cannot show a readable diff. That is fine.
 
 ## Docs and tutorials
 
-- Derivative "Learn TouchDesigner" and the Audio Spectrum CHOP and Analyze CHOP wiki pages.
-- Elburz, Interactive & Immersive HQ beginner series, for general TD orientation.
+- [Derivative TouchDesigner Curriculum, 100 Series](https://learn.derivative.ca/courses/100-fundamentals/), the official free fundamentals course.
+- [Learn TouchDesigner hub (Derivative)](https://docs.derivative.ca/Learning_TouchDesigner).
+- Operators used today: [Audio Device In CHOP](https://docs.derivative.ca/Audio_Device_In_CHOP), [Trail CHOP](https://docs.derivative.ca/Trail_CHOP), [Audio Spectrum CHOP](https://docs.derivative.ca/Audio_Spectrum_CHOP), [Analyze CHOP](https://docs.derivative.ca/Analyze_CHOP), [Math CHOP](https://docs.derivative.ca/Math_CHOP), [CHOP to TOP](https://docs.derivative.ca/CHOP_to_TOP), [Null CHOP](https://docs.derivative.ca/Null_CHOP), [Circle TOP](https://docs.derivative.ca/Circle_TOP).
+- [Interactive & Immersive HQ Beginner Crash Course (YouTube)](https://iihq.tv/beginnercourse), for general orientation.

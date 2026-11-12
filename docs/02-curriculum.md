@@ -26,15 +26,16 @@ No new hardware is required for S1 to S5, or for the core TouchDesigner, Unreal,
 - **Runbook:** step-by-step in `docs/runbooks/S1-td-orientation.md`.
 - **Deliverable:** a TD project that captures live audio and shows a waveform and spectrum.
 - **Done when:** audio device input is live; a CHOP chain shows level moving; project saved into the repo.
-- **Docs/tutorials:** Derivative "Learn TouchDesigner", the official Audio Spectrum and Analyze CHOP wiki pages, Elburz/Interactive & Immersive HQ beginner series.
+- **Docs/tutorials:** [Derivative TouchDesigner Curriculum, 100 Series](https://learn.derivative.ca/courses/100-fundamentals/); [Learn TouchDesigner hub](https://docs.derivative.ca/Learning_TouchDesigner); [Audio Device In CHOP](https://docs.derivative.ca/Audio_Device_In_CHOP); [Audio Spectrum CHOP](https://docs.derivative.ca/Audio_Spectrum_CHOP); [Analyze CHOP](https://docs.derivative.ca/Analyze_CHOP); [Trail CHOP](https://docs.derivative.ca/Trail_CHOP); [Interactive & Immersive HQ Beginner Crash Course (YouTube)](https://iihq.tv/beginnercourse).
 - **Pitfalls:** picking the wrong audio device; sample-rate mismatches; forgetting that Non-Commercial caps TOP resolution at 1280x1280.
 - **Stretch:** add a simple audio-driven TOP (a circle that scales with level).
 - **Toolkit:** repo skeleton, `td/` folder, a NAMING.md with component and parameter conventions.
 
 ### S2 - Tue Nov 10 - Audio analysis deep dive [M/B]
+- **Runbook:** step-by-step in `docs/runbooks/S2-audio-analysis.md`.
 - **Deliverable:** low/mid/high band energy plus an envelope follower, as clean CHOP channels.
 - **Done when:** three band channels and one envelope channel respond correctly to music and to voice.
-- **Docs/tutorials:** Audio Spectrum CHOP, Analyze CHOP, Filter and Lag CHOP wiki pages.
+- **Docs/tutorials:** [Audio Filter CHOP](https://docs.derivative.ca/Audio_Filter_CHOP); [Analyze CHOP](https://docs.derivative.ca/Analyze_CHOP); [Lag CHOP](https://docs.derivative.ca/Lag_CHOP); [Math CHOP](https://docs.derivative.ca/Math_CHOP); [Rename CHOP](https://docs.derivative.ca/Rename_CHOP); [Merge CHOP](https://docs.derivative.ca/Merge_CHOP); [Trigger CHOP](https://docs.derivative.ca/Trigger_CHOP); [IIHQ: Audio reactive visuals, a beginner guide](https://interactiveimmersive.io/blog/touchdesigner-lessons/audio-reactive-visuals-a-beginner-guide/).
 - **Pitfalls:** no smoothing (jittery output); band crossovers overlapping; mono vs stereo confusion.
 - **Stretch:** add beat detection (a trigger on envelope threshold).
 - **Toolkit:** `audioAnalysis` network, pre-component.
