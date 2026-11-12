@@ -41,9 +41,10 @@ No new hardware is required for S1 to S5, or for the core TouchDesigner, Unreal,
 - **Toolkit:** `audioAnalysis` network, pre-component.
 
 ### S3 - Wed Nov 11 - Componentize the audio analysis [M/B]
+- **Runbook:** step-by-step in `docs/runbooks/S3-componentize-audio.md`.
 - **Deliverable:** `audioAnalysis.tox` with Custom Parameters (gain, smoothing, band crossovers) and named outputs.
 - **Done when:** the .tox drops into a blank project and works with no external references; parameters change behavior live.
-- **Docs/tutorials:** Derivative "Components", "Custom Parameters", "Promoting Parameters".
+- **Docs/tutorials:** [Component](https://docs.derivative.ca/Component); [Custom Parameters](https://docs.derivative.ca/Custom_Parameters); [Base COMP](https://docs.derivative.ca/Base_COMP); [In CHOP](https://docs.derivative.ca/In_CHOP) and [Out CHOP](https://docs.derivative.ca/Out_CHOP) (component inputs and outputs).
 - **Pitfalls:** hard-coded paths that break on import; unexposed parameters; no default values.
 - **Stretch:** add a built-in preview panel on the COMP.
 - **Toolkit:** first real reusable component, `td/audioAnalysis.tox` v0.1.
